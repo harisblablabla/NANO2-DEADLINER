@@ -11,14 +11,15 @@ import SwiftUI
 
 struct HomePage: View {
     
+    let pickerStatus: [String] = ["On Going","Finished"]
+    @State private var selectedStatus: String = "On Going"
+    @State private var showModal: Bool = false
+    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(red: 17/255, green: 59/255, blue: 73/255, alpha: 1)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     }
-    
-    let pickerStatus: [String] = ["On Going","Finished"]
-    @State private var selectedStatus: String = "On Going"
 
     var body: some View {
         NavigationView {
@@ -47,6 +48,7 @@ struct HomePage: View {
                         .pickerStyle(.segmented)
                         .padding()
                     }
+                    Spacer()
                 }
             }
             .primaryNavigation
@@ -54,7 +56,7 @@ struct HomePage: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button{
-                        print("mancay")
+                        showModal.toggle()
                     } label: {
                         Image(systemName: "plus.circle")
                             .resizable()
@@ -62,6 +64,9 @@ struct HomePage: View {
                             .foregroundColor(.white)
                     }
                 }
+            }
+            .sheet(isPresented: $showModal) {
+                ModalAction()
             }
         }
     }
