@@ -12,6 +12,8 @@ struct ModalAction: View {
     @State private var topic: String = ""
     @State private var description: String = ""
     @State private var currentDays: Int = 1
+    
+    @StateObject var vm = ActionPlanViewModel()
 
     var body: some View {
         NavigationView {
@@ -74,6 +76,8 @@ struct ModalAction: View {
                     Button{
                         let toDate = Calendar.current.date(byAdding: .day, value: currentDays, to: Date())
                         print(topic, description, toDate!)
+                        vm.addActionPlan(plan: topic, description: description, date: toDate!)
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Save")
                             .fontWeight(.bold)

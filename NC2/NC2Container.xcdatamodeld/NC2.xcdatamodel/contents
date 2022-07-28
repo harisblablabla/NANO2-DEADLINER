@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ActionPlan" representedClassName="ActionPlan" syncable="YES" codeGenerationType="class">
+    <entity name="ActionPlanEntity" representedClassName="ActionPlanEntity" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -14,6 +14,6 @@
     </entity>
     <elements>
         <element name="User" positionX="-63" positionY="-9" width="128" height="74"/>
-        <element name="ActionPlan" positionX="-54" positionY="18" width="128" height="104"/>
+        <element name="ActionPlanEntity" positionX="-54" positionY="18" width="128" height="104"/>
     </elements>
 </model>

@@ -11,13 +11,14 @@
 		2ED7E0F0288E3E4D00DE16D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E0EF288E3E4D00DE16D4 /* ContentView.swift */; };
 		2ED7E0F2288E3E4E00DE16D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7E0F1288E3E4E00DE16D4 /* Assets.xcassets */; };
 		2ED7E0F5288E3E4E00DE16D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED7E0F4288E3E4E00DE16D4 /* Preview Assets.xcassets */; };
-		2ED7E0FA288E3E4E00DE16D4 /* NC2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E0F8288E3E4E00DE16D4 /* NC2.xcdatamodeld */; };
+		2ED7E0FA288E3E4E00DE16D4 /* NC2Container.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E0F8288E3E4E00DE16D4 /* NC2Container.xcdatamodeld */; };
 		2ED7E102288F978500DE16D4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E101288F978500DE16D4 /* HomePage.swift */; };
 		2ED7E105289148A700DE16D4 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E104289148A700DE16D4 /* NavigationBar.swift */; };
 		2ED7E10D2891570E00DE16D4 /* ModalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E10C2891570E00DE16D4 /* ModalAction.swift */; };
 		2ED7E10F289178EF00DE16D4 /* OnBoardingGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E10E289178EF00DE16D4 /* OnBoardingGoals.swift */; };
 		2ED7E1122892C62200DE16D4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E1112892C62200DE16D4 /* TimerView.swift */; };
-		2ED7E1142892CED000DE16D4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */; };
+		2ED7E1162892F14100DE16D4 /* ActionPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E1152892F14100DE16D4 /* ActionPlanViewModel.swift */; };
+		2ED7E11828931BD000DE16D4 /* UserGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E11728931BD000DE16D4 /* UserGoals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		2ED7E10C2891570E00DE16D4 /* ModalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAction.swift; sourceTree = "<group>"; };
 		2ED7E10E289178EF00DE16D4 /* OnBoardingGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingGoals.swift; sourceTree = "<group>"; };
 		2ED7E1112892C62200DE16D4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2ED7E1152892F14100DE16D4 /* ActionPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPlanViewModel.swift; sourceTree = "<group>"; };
+		2ED7E11728931BD000DE16D4 /* UserGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGoals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,8 @@
 				2ED7E100288F90D700DE16D4 /* View */,
 				2ED7E0ED288E3E4D00DE16D4 /* NC2App.swift */,
 				2ED7E0EF288E3E4D00DE16D4 /* ContentView.swift */,
-				2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */,
 				2ED7E0F1288E3E4E00DE16D4 /* Assets.xcassets */,
-				2ED7E0F8288E3E4E00DE16D4 /* NC2.xcdatamodeld */,
+				2ED7E0F8288E3E4E00DE16D4 /* NC2Container.xcdatamodeld */,
 				2ED7E0F3288E3E4E00DE16D4 /* Preview Content */,
 			);
 			path = NC2;
@@ -109,6 +110,7 @@
 			children = (
 				2ED7E104289148A700DE16D4 /* NavigationBar.swift */,
 				2ED7E1112892C62200DE16D4 /* TimerView.swift */,
+				2ED7E11728931BD000DE16D4 /* UserGoals.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 		2ED7E11028918BC600DE16D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7E1152892F14100DE16D4 /* ActionPlanViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,10 +196,11 @@
 				2ED7E105289148A700DE16D4 /* NavigationBar.swift in Sources */,
 				2ED7E102288F978500DE16D4 /* HomePage.swift in Sources */,
 				2ED7E0F0288E3E4D00DE16D4 /* ContentView.swift in Sources */,
+				2ED7E11828931BD000DE16D4 /* UserGoals.swift in Sources */,
 				2ED7E0EE288E3E4D00DE16D4 /* NC2App.swift in Sources */,
 				2ED7E10F289178EF00DE16D4 /* OnBoardingGoals.swift in Sources */,
-				2ED7E0FA288E3E4E00DE16D4 /* NC2.xcdatamodeld in Sources */,
-				2ED7E1142892CED000DE16D4 /* CoreDataManager.swift in Sources */,
+				2ED7E0FA288E3E4E00DE16D4 /* NC2Container.xcdatamodeld in Sources */,
+				2ED7E1162892F14100DE16D4 /* ActionPlanViewModel.swift in Sources */,
 				2ED7E1122892C62200DE16D4 /* TimerView.swift in Sources */,
 				2ED7E10D2891570E00DE16D4 /* ModalAction.swift in Sources */,
 			);
@@ -401,13 +405,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2ED7E0F8288E3E4E00DE16D4 /* NC2.xcdatamodeld */ = {
+		2ED7E0F8288E3E4E00DE16D4 /* NC2Container.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				2ED7E0F9288E3E4E00DE16D4 /* NC2.xcdatamodel */,
 			);
 			currentVersion = 2ED7E0F9288E3E4E00DE16D4 /* NC2.xcdatamodel */;
-			path = NC2.xcdatamodeld;
+			path = NC2Container.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

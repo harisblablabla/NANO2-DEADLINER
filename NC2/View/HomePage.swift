@@ -15,7 +15,9 @@ struct HomePage: View {
     @State private var selectedStatus: String = "On Going"
     @State private var showModal: Bool = false
     
-    let toDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+    @StateObject var vm = ActionPlanViewModel()
+    
+    let toDate = Calendar.current.date(byAdding: .day, value: 30, to: Date())
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(red: 17/255, green: 59/255, blue: 73/255, alpha: 1)
@@ -28,14 +30,7 @@ struct HomePage: View {
             ZStack {
                 VStack {
                     Section {
-                        RoundedRectangle(cornerRadius: 25)
-                            .fill(Color.init(UIColor(red: 248/255, green: 200/255, blue: 154/255, alpha: 0.7)))
-                            .frame(width: 352, height: 110, alignment: .center)
-                            .padding()
-                            .overlay(
-                                Text("I want to win MasterChef Competition")
-                                    .frame(width: 350, alignment: .center)
-                            )
+                        UserGoals(goals: "MasterChef Winner")
                     }
                     Section {
                         Text("Action Plan")
@@ -50,13 +45,13 @@ struct HomePage: View {
                         }
                         .pickerStyle(.segmented)
                         .padding()
+                        List(vm.savedEntities, id: \.self) { entity in
+                            CustomRowView(title: entity.topic ?? "Still Empty", date: entity.time ?? toDate!)
+                        }
+                        .listStyle(.plain)
+                        .padding(.trailing)
+                        .background(Color.white.opacity(0.3))
                     }
-                    List(0...12, id: \.self) { index in
-                        CustomRowView(title: "Swift UI", date: toDate!)
-                    }
-                    .listStyle(.plain)
-                    .padding(.trailing)
-                    .background(Color.white.opacity(0.3))
                 }
             }
             .primaryNavigation
@@ -64,7 +59,6 @@ struct HomePage: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button{
-                        
                         showModal.toggle()
                     } label: {
                         Image(systemName: "plus.circle")
