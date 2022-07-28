@@ -15,6 +15,8 @@ struct HomePage: View {
     @State private var selectedStatus: String = "On Going"
     @State private var showModal: Bool = false
     
+    let toDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())
+    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(red: 17/255, green: 59/255, blue: 73/255, alpha: 1)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -31,7 +33,8 @@ struct HomePage: View {
                             .frame(width: 352, height: 110, alignment: .center)
                             .padding()
                             .overlay(
-                                Text("I want to be a star")
+                                Text("I want to win MasterChef Competition")
+                                    .frame(width: 350, alignment: .center)
                             )
                     }
                     Section {
@@ -48,7 +51,12 @@ struct HomePage: View {
                         .pickerStyle(.segmented)
                         .padding()
                     }
-                    Spacer()
+                    List(0...12, id: \.self) { index in
+                        CustomRowView(title: "Swift UI", date: toDate!)
+                    }
+                    .listStyle(.plain)
+                    .padding(.trailing)
+                    .background(Color.white.opacity(0.3))
                 }
             }
             .primaryNavigation
@@ -56,6 +64,7 @@ struct HomePage: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button{
+                        
                         showModal.toggle()
                     } label: {
                         Image(systemName: "plus.circle")
@@ -76,4 +85,18 @@ struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
         HomePage()
     }
+}
+
+private struct CustomRowView: View {
+  var title: String
+  var date: Date
+  
+  var body: some View {
+    VStack(alignment: .leading) {
+      Text(title)
+        .font(.headline)
+      Spacer()
+      TimerView(setDate: date)
+    }
+  }
 }

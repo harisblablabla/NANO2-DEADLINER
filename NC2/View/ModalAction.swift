@@ -11,7 +11,7 @@ struct ModalAction: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var topic: String = ""
     @State private var description: String = ""
-    @State private var timePicker: String = ""
+    @State private var currentDays: Int = 1
 
     var body: some View {
         NavigationView {
@@ -36,7 +36,18 @@ struct ModalAction: View {
                                 .foregroundColor(.black)
                         }
                         Section {
-                            //dasdad
+//                            TimerView(setDate: toDate)
+                            HStack {
+                                Text("Days:   ")
+                                Picker("Days Picker", selection: $currentDays, content: {
+                                    ForEach(0..<30, content: { index in
+                                        Text("\(index+1)").tag(index+1)
+                                    })
+                                })
+                                .frame(width: 250)
+                                .clipped()
+                                .pickerStyle(.wheel)
+                            }
                         } header: {
                             Text("Time to finish the topic")
                                 .font(.system(size: 15))
@@ -45,7 +56,7 @@ struct ModalAction: View {
                         }
                         
                     }
-                    Spacer()
+//                    Spacer()
                 }
             }
             .primaryNavigation
@@ -61,9 +72,11 @@ struct ModalAction: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button{
-                        print(topic, description)
+                        let toDate = Calendar.current.date(byAdding: .day, value: currentDays, to: Date())
+                        print(topic, description, toDate!)
                     } label: {
                         Text("Save")
+                            .fontWeight(.bold)
                     }
                 }
             }

@@ -16,6 +16,8 @@
 		2ED7E105289148A700DE16D4 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E104289148A700DE16D4 /* NavigationBar.swift */; };
 		2ED7E10D2891570E00DE16D4 /* ModalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E10C2891570E00DE16D4 /* ModalAction.swift */; };
 		2ED7E10F289178EF00DE16D4 /* OnBoardingGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E10E289178EF00DE16D4 /* OnBoardingGoals.swift */; };
+		2ED7E1122892C62200DE16D4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E1112892C62200DE16D4 /* TimerView.swift */; };
+		2ED7E1142892CED000DE16D4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		2ED7E104289148A700DE16D4 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2ED7E10C2891570E00DE16D4 /* ModalAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAction.swift; sourceTree = "<group>"; };
 		2ED7E10E289178EF00DE16D4 /* OnBoardingGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingGoals.swift; sourceTree = "<group>"; };
+		2ED7E1112892C62200DE16D4 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +65,12 @@
 		2ED7E0EC288E3E4D00DE16D4 /* NC2 */ = {
 			isa = PBXGroup;
 			children = (
-				2ED7E106289149A500DE16D4 /* Controller */,
+				2ED7E11028918BC600DE16D4 /* ViewModel */,
 				2ED7E103289146F600DE16D4 /* Model */,
 				2ED7E100288F90D700DE16D4 /* View */,
 				2ED7E0ED288E3E4D00DE16D4 /* NC2App.swift */,
 				2ED7E0EF288E3E4D00DE16D4 /* ContentView.swift */,
+				2ED7E1132892CED000DE16D4 /* CoreDataManager.swift */,
 				2ED7E0F1288E3E4E00DE16D4 /* Assets.xcassets */,
 				2ED7E0F8288E3E4E00DE16D4 /* NC2.xcdatamodeld */,
 				2ED7E0F3288E3E4E00DE16D4 /* Preview Content */,
@@ -99,19 +104,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2ED7E106289149A500DE16D4 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		2ED7E10928914B7300DE16D4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				2ED7E104289148A700DE16D4 /* NavigationBar.swift */,
+				2ED7E1112892C62200DE16D4 /* TimerView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		2ED7E11028918BC600DE16D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +196,8 @@
 				2ED7E0EE288E3E4D00DE16D4 /* NC2App.swift in Sources */,
 				2ED7E10F289178EF00DE16D4 /* OnBoardingGoals.swift in Sources */,
 				2ED7E0FA288E3E4E00DE16D4 /* NC2.xcdatamodeld in Sources */,
+				2ED7E1142892CED000DE16D4 /* CoreDataManager.swift in Sources */,
+				2ED7E1122892C62200DE16D4 /* TimerView.swift in Sources */,
 				2ED7E10D2891570E00DE16D4 /* ModalAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
